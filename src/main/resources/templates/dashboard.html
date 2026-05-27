@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareerCompass AI Dashboard</title>
+
+  <style>
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial,sans-serif;
+    }
+
+    body{
+        background:#eef2f7;
+    }
+
+    .sidebar{
+        width:250px;
+        height:100vh;
+        background:#1d3557;
+        position:fixed;
+        padding:30px 20px;
+        color:white;
+    }
+
+    .sidebar h2{
+        margin-bottom:40px;
+        text-align:center;
+    }
+
+    .sidebar a{
+        display:block;
+        color:white;
+        text-decoration:none;
+        padding:15px;
+        margin:10px 0;
+        border-radius:8px;
+        transition:0.3s;
+    }
+
+    .sidebar a:hover{
+        background:#457b9d;
+    }
+
+    .main-content{
+        margin-left:270px;
+        padding:30px;
+    }
+
+    .top-section{
+        background:white;
+        padding:30px;
+        border-radius:15px;
+        box-shadow:0px 0px 12px rgba(0,0,0,0.1);
+        margin-bottom:30px;
+    }
+
+    .top-section h1{
+        color:#1d3557;
+        margin-bottom:10px;
+    }
+
+    .top-section p{
+        color:#555;
+        font-size:18px;
+    }
+
+    .cards{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+        gap:25px;
+    }
+
+    .card{
+        background:white;
+        padding:25px;
+        border-radius:15px;
+        box-shadow:0px 0px 12px rgba(0,0,0,0.08);
+        transition:0.3s;
+    }
+
+    .card:hover{
+        transform:translateY(-5px);
+    }
+
+    .card h3{
+        color:#0077b6;
+        margin-bottom:15px;
+    }
+
+    .card p{
+        color:#444;
+        line-height:1.7;
+    }
+
+    .progress-bar{
+        width:100%;
+        background:#ddd;
+        border-radius:20px;
+        overflow:hidden;
+        margin-top:15px;
+    }
+
+    .progress{
+        width:70%;
+        background:#00b4d8;
+        color:white;
+        padding:10px;
+        text-align:center;
+    }
+
+    .btn{
+        display:inline-block;
+        margin-top:18px;
+        padding:10px 18px;
+        background:#0077b6;
+        color:white;
+        text-decoration:none;
+        border-radius:8px;
+        font-weight:bold;
+    }
+
+    .btn:hover{
+        background:#023e8a;
+    }
+
+    .salary{
+        font-size:28px;
+        color:#00b894;
+        font-weight:bold;
+        margin-top:15px;
+    }
+    .salary{
+    font-size:28px;
+    color:#00b894;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+/* ADD THIS HERE */
+
+.logout-btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:red;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.logout-btn:hover{
+    background:darkred;
+}
+
+  </style>
+
+</head>
+
+<body>
+
+
+<div class="sidebar">
+
+  <h2>CareerCompass AI</h2>
+
+  <a href="/">Home</a>
+  <a href="/quiz">Career Quiz</a>
+  <a href="/dashboard">Dashboard</a>
+  <a href="/roadmap?career=Software Developer">Roadmap</a>
+
+</div>
+
+<div class="main-content">
+
+  <div class="top-section">
+
+    <h1>Welcome to Your AI Career Dashboard</h1>
+
+    <p>
+      Analyze your career growth, track your learning progress,
+      and explore industry-ready skills recommended by CareerCompass AI.
+    </p>
+    <br><br>
+
+    <a href="/logout" class="logout-btn">
+      Logout
+    </a>
+
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+
+      <h3>Recommended Career</h3>
+
+      <p>
+        Software Developer
+      </p>
+
+      <a href="/quiz" class="btn">
+        Retake Quiz
+      </a>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Top Skills</h3>
+
+      <p>
+        ✔ Java <br>
+        ✔ Spring Boot <br>
+        ✔ SQL <br>
+        ✔ REST API <br>
+        ✔ GitHub <br>
+        ✔ Data Structures
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Learning Progress</h3>
+
+      <div class="progress-bar">
+        <div class="progress">70%</div>
+      </div>
+
+      <a href="/roadmap?career=Software Developer"
+         class="btn">
+        View Roadmap
+      </a>
+
+    </div>
+
+    <div class="card">
+
+      <h3>AI Career Insights</h3>
+
+      <p>
+        Based on your logical reasoning,
+        analytical skills, and technical interests,
+        Software Development is highly recommended.
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Trending Technologies</h3>
+
+      <p>
+        ✔ Artificial Intelligence <br>
+        ✔ Cloud Computing <br>
+        ✔ Cyber Security <br>
+        ✔ Data Science <br>
+        ✔ Full Stack Development
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Average Salary Insight</h3>
+
+      <div class="salary">
+        ₹8 LPA - ₹18 LPA
+      </div>
+
+      <p>
+        Estimated salary range for skilled
+        Software Developers in India.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+</body>
+
+</html>

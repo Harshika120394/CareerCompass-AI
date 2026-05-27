@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Result</title>
+
+  <style>
+
+    body{
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #141e30, #243b55);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        margin:0;
+        color:white;
+    }
+
+    .result-box{
+        background: rgba(255,255,255,0.1);
+        padding:40px;
+        border-radius:15px;
+        box-shadow:0px 0px 20px rgba(0,0,0,0.4);
+        text-align:center;
+        width:550px;
+    }
+
+    h1{
+        color:#00d4ff;
+        margin-bottom:20px;
+    }
+
+    h2{
+        color:#00ffcc;
+        margin-top:20px;
+        font-size:32px;
+    }
+
+    p{
+        margin-top:15px;
+        font-size:18px;
+        line-height:1.6;
+    }
+
+    .description{
+        margin-top:20px;
+        background: rgba(255,255,255,0.08);
+        padding:20px;
+        border-radius:10px;
+    }
+
+    a{
+        display:inline-block;
+        margin-top:25px;
+        padding:12px 20px;
+        background:#00d4ff;
+        color:black;
+        text-decoration:none;
+        border-radius:8px;
+        font-weight:bold;
+    }
+
+    a:hover{
+        background:#00ffcc;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<div class="result-box">
+
+  <h1>Career Recommendation</h1>
+
+  <p>Your recommended career path is:</p>
+
+  <h2 th:text="${career}"></h2>
+
+  <div class="description">
+
+    <p th:text="${description}">
+      Career description will appear here.
+    </p>
+
+  </div>
+
+  <a th:href="@{'/roadmap'(career=${career})}">
+    View Learning Roadmap
+  </a>
+
+  <br><br>
+
+  <a href="/dashboard">
+    Go To Dashboard
+  </a>
+
+  <br><br>
+
+  <a href="/quiz">
+    Take Quiz Again
+  </a>
+
+</div>
+
+</body>
+</html>
